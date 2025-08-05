@@ -1,0 +1,21 @@
+{
+    "name": "Pybox",
+    "short_name": "Pybox",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1976d2",
+    "orientation": "potrait",
+    "icons": [
+        {
+            "src": "/static/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/ststic/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

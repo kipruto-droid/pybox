@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h3>Search results for "{{ query }}"</h3>
+
+    {% if results %}
+    <div class="card-list mt-3">
+        {% for upload in results %}
+        <div class="card">
+            <h5>{{ upload.filename }}</h5>
+            <p>Uploaded at: {{ upload.uploaded_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No files found matching your search</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --upload-bg: #f1f8ff;
+    --navbar-bg: #1976d2;
+    --profile-btn: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --upload-bg: #2c2c2c;
+    --navbar-bg: #0d47a1;
+    --profile-btn: #333333;
+}
+
+body,
+.dashboard-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: bcakground-color 0.3s ease, color 0.3s ease;
+}
+
+.card p {
+    color: var(--text-color);
+}
+
+.upload-box {
+    background-color: var(--upload-bg);
+}
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+}
+
+.profile-btn {
+    background-color: var(--profile-btn);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+    background-color: #2196f3;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+    background-color: #e53935;
+}
+
+[data-bs-theme="light"] body {
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+}
+
+[data-bs-theme="dark"] body {
+    background-color: var(--bg-color);
+}

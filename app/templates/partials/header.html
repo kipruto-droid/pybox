@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Secure for YOU</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                <li class="nav-item">
+                    <a class="btn btn-outline-light me-2 mb-2 mb-lg-0" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-outline-light me-2 mb-2 mb-lg-0" href="/dashboard">Dashboard</a>
+                </li>
+
+                {% if session.get('user_id') %}
+                <li class="nav-item dropdown">
+                    <a class="btn btn-outline-light dropdown-toggle d-flex align-items-center" href="#" role="button"
+                        data-bs-toggle="dropdown">
+                        <img src="{{ url_for('static', filename='profile_pics/' ~ session.get('profile_pic', 'default.jpg')) }}"
+                            alt="Profile" width="30" height="30" class="rounded-circle me-2">
+                        {{ session.get('username', 'My Profile') }}
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end mt-2">
+                        <li><a class="dropdown-item" href="{{ url_for('main.profile') }}">My Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('main.edit_profile') }}">Edit Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="btn btn-success me-2 mb-2 mb-lg-0" href="{{ url_for('auth.login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary mb-2 mb-lg-0" href="{{ url_for('auth.register') }}">Register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
